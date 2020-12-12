@@ -14,7 +14,10 @@ import { useInjectReducer } from 'utils/injectReducer';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import CatForm from 'containers/HomePage/screens/CatForm';
+
+const CatForm = React.lazy(() =>
+  import('containers/HomePage/screens/CatForm/Loadable'),
+);
 
 export default function HomePage() {
   useInjectReducer({ key: 'homePage', reducer });
